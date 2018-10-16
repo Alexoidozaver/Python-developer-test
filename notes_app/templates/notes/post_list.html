@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="ru">>
+    <head>
+        <meta charset="UTF-8">
+        <title>Заметки</title>
+    </head>
+    <body>
+    <form action="/form/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+     </form>
+        <div>
+            <h1><a href="/">Вашы личные заметки</a></h1>
+        </div>
+
+    {% for post in posts %}
+    <div>
+        <h1>{{ post.name }}</h1>
+        <p>{{ post.text }}</p>
+    </div>
+{% endfor %}
+    </body>
+</html>
