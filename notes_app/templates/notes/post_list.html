@@ -3,7 +3,7 @@
 <html lang="ru">>
     <head>
         <meta charset="UTF-8">
-        <title>Заметки</title>
+        <title>apple games</title>
     </head>
     <body>
     <form action="/form/" method="post">
@@ -12,13 +12,15 @@
     <input type="submit" value="Submit">
      </form>
         <div>
-            <h1><a href="/">Вашы личные заметки</a></h1>
+            <h1><a href="/">all games</a></h1>
         </div>
 
-    {% for post in posts %}
+    {% for type in games %}
     <div>
-        <h1>{{ post.name }}</h1>
-        <p>{{ post.text }}</p>
+        <h1>{{ type.name }}</h1>
+        {% for game in type.games %}
+        <h1>{{ game.name }}</h1>
+        {% endfor %}
     </div>
 {% endfor %}
     </body>
